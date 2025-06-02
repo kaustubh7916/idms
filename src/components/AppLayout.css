@@ -1,0 +1,99 @@
+/* AppLayout.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5; /* Light grey background for the overall app, matching the image's body/background */
+  overflow-x: hidden;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-body {
+  display: flex;
+  flex: 1;
+  margin-top: 72px; /* Space for the fixed header */
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  margin-left: 40px; /* Default for closed sidebar width */
+  background-color: #ffffff; /* White background for the main content area, as seen in the charts and cards */
+}
+
+.main-content.sidebar-open {
+  margin-left: 150px; /* Width when sidebar is open */
+}
+
+/* Dashboard Cards Styling - Keep as is, they already have a white background and subtle shadow */
+.dashboard-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.card {
+    background-color: white; /* Already white */
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+    flex: 1;
+    min-width: 180px;
+    max-width: calc(20% - 12px);
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: bold;
+    border: 1px solid #e0e0e0; /* Add a subtle border to cards for definition */
+}
+
+.card span { /* Styling for the actual numbers/amounts inside cards */
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #007bff; /* A blue accent for numbers, common in dashboards */
+    display: block;
+    margin-top: 5px;
+}
+
+/* Charts Styling - Keep as is, they already have a white background */
+.charts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.chart-box {
+    background-color: white; /* Already white */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0; /* Add a subtle border to chart boxes */
+}
+
+.chart-box h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+/* --- ADDED/MODIFIED FOR CENTERING PROJECT MGMT. TEXT --- */
+.dashboard-page-content h2 {
+    margin-top: 0%
+    ;
+    margin-bottom: 150px;
+    color: #333;
+    text-align: center; /* <--- ADD THIS LINE */
+}

@@ -1,0 +1,121 @@
+/* Sidebar.css */
+
+.sidebar {
+    width: 250px; /* Fixed width as per the image */
+    background-color: #fff; /* White background */
+    color: #333; /* Default text color */
+    height: calc(100vh - 60px); /* Adjust height to fill remaining viewport space */
+    position: fixed;
+    top: 60px; /* Start 60px from the top, below the header */
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    z-index: 99; /* Slightly lower z-index than header if header is 100 */
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    overflow-y: scroll; /* Keep scroll functionality */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* If you need to hide/show the sidebar, you'd manage 'left' property via JS/React state */
+/* For a fixed sidebar, the 'open' class might not be strictly necessary for positioning,
+   but can be used for other visual states if desired. */
+/* .sidebar.open {
+    left: 0;
+} */
+
+/* Hide the toggle button wrapper as it's not present in the reference image's sidebar */
+.toggleWrapper {
+    display: none;
+}
+
+/* Navigation Links Container */
+.navLinks {
+    flex-grow: 1; /* Allows nav links to take up available space */
+    padding: 10px 0; /* Vertical padding */
+}
+
+/* Individual Navigation Items (including categories, as per image) */
+.navItem {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px; /* Padding inside each item */
+    text-decoration: none;
+    color: #333; /* Default link color (will be overridden by color classes) */
+    font-size: 0.95em;
+    font-weight: 500; /* Slightly bolder for all items */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.navItem:hover {
+    background-color: #f0f0f0; /* Light background on hover */
+}
+
+/* Active Navigation Item (if you implement active state) */
+.navItem.active {
+    background-color: #e6e6e6; /* Slightly darker background for active */
+    /* You can add a border-left or other visual cues for active state */
+}
+
+/* Icon styling */
+.navIcon {
+    display: flex; /* To center SVG if needed */
+    align-items: center;
+    justify-content: center;
+    width: 24px; /* Fixed width for icon area */
+    height: 24px; /* Fixed height for icon area */
+    margin-right: 8px; /* Space between icon and text */
+    color: #666; /* Default icon color, can be overridden by specific color classes */
+}
+
+.navIcon svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 2; /* Adjust stroke thickness for icons */
+}
+
+/* The vertical bar and colored text for nav items */
+.navText {
+    position: relative; /* For the vertical bar */
+    display: flex; /* Allow content inside to be flexed if needed */
+    align-items: center;
+}
+
+.navText::before {
+    content: "|"; /* The vertical bar */
+    margin-right: 8px; /* Space between bar and text */
+    font-weight: bold;
+    color: #ccc; /* Color for the vertical bar */
+    font-size: 1.1em; /* Make the bar slightly larger */
+}
+
+/* Define the specific color classes for text and icons */
+/* These colors are approximated from the image */
+.text-red { color: #e74c3c; }
+.text-blue { color: #3498db; }
+.text-yellow { color: #f1c40f; }
+.text-orange { color: #e67e22; }
+.text-teal { color: #1abc9c; } /* Approximated for Stores */
+.text-pink { color: #e91e63; }
+.text-green { color: #2ecc71; }
+.text-purple { color: #9b59b6; }
+
+/* Apply color to icons when the parent .navItem has a color class */
+.navItem.text-red .navIcon svg { stroke: #e74c3c; }
+.navItem.text-blue .navIcon svg { stroke: #3498db; }
+.navItem.text-yellow .navIcon svg { stroke: #f1c40f; }
+.navItem.text-orange .navIcon svg { stroke: #e67e22; }
+.navItem.text-teal .navIcon svg { stroke: #1abc9c; }
+.navItem.text-pink .navIcon svg { stroke: #e91e63; }
+.navItem.text-green .navIcon svg { stroke: #2ecc71; }
+.navItem.text-purple .navIcon svg { stroke: #9b59b6; }
+
+

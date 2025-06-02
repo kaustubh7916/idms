@@ -1,0 +1,89 @@
+/* Header.css */
+
+.app-header {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: space-between; /* Distribute items across the header */
+    align-items: center; /* Vertically align items in the center */
+    background-color: #ffffff; /* White background for the header */
+    padding: 10px 20px; /* Padding around the header content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow at the bottom */
+    border-bottom: 1px solid #f0f0f0; /* Light border at the bottom */
+    height: 60px; /* Fixed height for the header */
+    position: sticky; /* Makes the header stick to the top when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Ensure header is above other content */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+/* Brand/Logo Section */
+.header-brand {
+    display: flex;
+    align-items: center;
+    /* No gap needed if it's just one image */
+}
+
+.brand-logo {
+    /* Styles for the image logo */
+    height: 40px; /* Increased height for better visibility, adjust as needed */
+    width: auto; /* Maintain aspect ratio */
+    max-width: 180px; /* Set a maximum width to prevent it from getting too large */
+    object-fit: contain; /* Ensures the entire image is visible within its bounds without cropping */
+    vertical-align: middle; /* Helps align the image if there's surrounding text or elements */
+}
+
+/* Welcome Message */
+.header-welcome {
+    font-size: 0.9em;
+    color: #555; /* Muted color for welcome text */
+    white-space: nowrap; /* Prevent text wrapping */
+    margin-left: auto; /* Push welcome text to the right, before the logout button */
+    margin-right: 20px; /* Space between welcome text and logout button */
+}
+
+/* Logout Button */
+.logout-btn {
+    background-color: #e91e63; /* Magenta background color */
+    color: #ffffff; /* White text color */
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px; /* Slightly rounded corners */
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.logout-btn:hover {
+    background-color: #d81b60; /* Slightly darker magenta on hover */
+    transform: translateY(-1px); /* Slight lift effect on hover */
+}
+
+.logout-btn:active {
+    transform: translateY(0); /* Reset on click */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .app-header {
+        flex-wrap: wrap; /* Allow items to wrap to next line */
+        height: auto; /* Auto height when wrapping */
+        padding: 10px;
+    }
+
+    .header-brand,
+    .header-welcome,
+    .logout-btn {
+        margin-bottom: 5px; /* Add some space when items wrap */
+    }
+
+    .header-welcome {
+        margin-left: 0; /* Remove auto margin on small screens */
+        margin-right: 10px; /* Adjust spacing */
+    }
+}

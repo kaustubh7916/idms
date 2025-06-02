@@ -1,0 +1,7 @@
+/* Reset some default margins */
+body, html, #root {
+  margin-bottom: 50px;
+  padding: 0;
+  height: 100%;
+  background-color: #ffffff;
+}

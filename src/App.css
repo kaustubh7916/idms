@@ -1,0 +1,24 @@
+.app {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* When sidebar is open, main content shifts right */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-left: 220px;
+  transition: margin-left 0.3s ease;
+}
+
+/* When sidebar is closed, main content fills full width */
+.sidebar.closed ~ .main-content {
+  margin-left: 0;
+}
+.h2{
+  margin-bottom: 45678px;
+}
